@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -f Dockerfile.dev . -t mateusz/docker-workflow
+  - docker build -t mateusz/docker-workflow -f Dockerfile.dev . 
 
 script:
   - docker run -e CI=true mateusz/docker-workflow npm run test
